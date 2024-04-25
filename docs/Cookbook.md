@@ -110,7 +110,8 @@ After=network.target
 [Service]
 Type=simple
 User=sri
-ExecStart=NODE_ENV=production node /home/sri/myapp/myapp.js server -l http://*:8080
+Environment="NODE_ENV=production"
+ExecStart=node /home/sri/myapp/myapp.js server -l http://*:8080
 
 [Install]
 WantedBy=multi-user.target
